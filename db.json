@@ -176,6 +176,36 @@
            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
            "url":"./img/3.jpg"
         }        
+    ],
+
+    "users":[
+        {
+            "id":1,
+            "loginStatus": false,
+            "username":"jackson2000",
+            "email":"jackson2000@gmail.com",
+            "pnoneNo": 254797955092,
+            "password":"12345"
+
+        },
+        {
+            "id":1,
+            "loginStatus": false,
+            "username":"charles2000",
+            "email":"charles2000@gmail.com",
+            "pnoneNo": 254797955092,
+            "password":"12345"
+
+        },
+        {
+            "id":1,
+            "loginStatus": false,
+            "username":"james2000",
+            "email":"james2000@gmail.com",
+            "pnoneNo": 254797955092,
+            "password":"12345"
+
+        }
     ]
     
 }
