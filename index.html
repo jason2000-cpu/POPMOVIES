@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.scss">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
         rel="stylesheet">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div>
-                <button  onclick="document.getElementById('id01').style.display='unset'">Login</button>
+                <button  onclick="login()">Login</button>
                 <button onclick="signup()">Signup</button>
             </div>
         </div>
@@ -116,29 +116,9 @@
 
 <!-----------login/logout modal------------>
 
-<form  id="id01" action="action_page.php" method="post">
-    <div class="imgcontainer">
-        <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
-
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit">Login</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-</form>
+<div class="login-form">
+    
+</div>
 
 
 <!-----------end of login/logout modal form------->
