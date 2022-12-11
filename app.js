@@ -40,7 +40,8 @@ ball.addEventListener("click", () => {
 
 // Get the modal
 const  modal = document.querySelector('.login-form');
-const login_btn = document.querySelector('.login-form')
+const login_btn = document.querySelector('.login-form');
+const body = document.querySelector('.bdy');
 
 
 // When the user clicks anywhere outside of the modal, close it
@@ -51,5 +52,11 @@ window.onclick = function(event) {
 }
 
 function login(){
-  login_btn.style.display='unset'
+  if(modal.style.display === "none") {
+    body.style.background.color = 'grey'
+    modal.style.display = "unset"
+  }else{
+    body.style.background.color = 'none'
+    modal.style.display = "none"
+  }
 }
