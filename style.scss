@@ -277,6 +277,8 @@ body {
 
 /***modal form styling ***/
 /* Bordered form */
+
+
 .login-form{
   color:white;
   display: none;
@@ -284,21 +286,39 @@ body {
   left: 34rem;
   top: 6rem;
   border:2px solid black;
-  background-color:#210303;
+  background-image: linear-gradient(145deg, #151515, #210303,#381513, #c73523);
   border-radius: 5%;
 }
-form #username, form #pwd{
+.signup-form{
+  color: white;
+  display: none;
+  position: absolute;
+  left: 34rem;
+  top: 4rem;
+  border: 2px solid black;
+  background-image: linear-gradient(145deg, #151515, #210303, #381513, #c73523);
+  border-radius: 5%;
+}
+.login-form input[type=text], input[type=password], input[type=email], input[type=number]{
   display:block;
   margin:2rem 1.5rem;
   height: 1.7rem;
-  width: 18rem
+  width: 18rem;
+  border:none
 }
-.login-form h1{
+.signup-form input[type=text],input[type=password],input[type=email],input[type=number]{
+  display: block;
+  margin: 2rem 2rem 1rem 2rem;
+  height: 1.7rem;
+  width: 20rem;
+  border:none
+}
+.login-form h1, .signup-form h1{
   text-align: center;
   margin-top: 2rem;
 }
 
-form #submit-btn {
+.form #submit-btn {
   display: block;
   background-color: #4dbf00;
   margin: 1rem 5rem;
@@ -309,17 +329,17 @@ form #submit-btn {
   padding:2px
 
 }
-.login-form p{
+.login-form p, .signup-form p{
   margin: 2rem;
 }
-form span{
+.form span{
   margin: 1rem 2rem
 }
 .social-icons {
-  margin: 2rem 2rem;
+  margin: 2rem 2rem .8rem 2rem;
 }
 .social-icons .bi{
-  margin-left: 2rem;
+  margin: 2rem;
   cursor: pointer;
 }
 .hide{

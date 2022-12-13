@@ -119,19 +119,37 @@
 
 <div class="login-form">
     <h1>LOGIN</h1>
-    <form action="">
+    <form id="signin" onsubmit="event.preventDefault();" >
             <input type="text" id="username" placeholder="username" required>
-            <input type="password" id="pwd" placeholder="password" required> <i class="hide bi bi-eye-slash-fill"></i> 
-            <span><input type="checkbox"> Remember me</span>
-            <button id="submit-btn" value="SUBMIT">SUBMIT</button>
+            <input type="password" id="password" placeholder="password" required> <i class="hide bi bi-eye-slash-fill"></i> 
+            <span style="display:inline"><input type="checkbox"> Remember me</span>
+            <button class="loginBtn" value="SUBMIT">SUBMIT</button>
     </form>
     <p>Don't have an account? Create  <a>here</a> </p>
     <div class="social-icons">
             <i class="bi bi-instagram"></i> <i class="bi bi-linkedin"></i> 
             <i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i>
     </div>
-</div>
+</form>
 
+<!--signup-->
+<div class="signup-form">
+    <h1>SIGNUP</h1>
+    <form  onsubmit="event.preventDefault();" id="signup">
+        <input type="text" name="username" placeholder="username" required>
+        <input type="email" name="email" placeholder="email" required>
+        <input type="number" name="phoneNo" id="phoneNo" placeholder="phone number">
+        <input type="password" name="password" id="password" placeholder="password">
+        <input type="password" name="pwd" placeholder="confirm password" required> <i class="hide bi bi-eye-slash-fill"></i>
+        <span><input type="checkbox" id="chckbox">Terms & Conditions</span>
+        <button id="submit-btn" value="SUBMIT">Register</button>
+    </form>
+    <p>Already have and account ? Login <a>here</a> </p>
+    <div class="social-icons">
+        <i class="bi bi-instagram"></i> <i class="bi bi-linkedin"></i>
+        <i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i>
+    </div>
+</div>
 
 <!-----------end of login/logout modal form------->
 

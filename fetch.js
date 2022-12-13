@@ -93,3 +93,38 @@ fetch("http://localhost:3000/series",{
     });
 })
 .catch(error => console.error(error));
+
+
+//login/signup authentication
+const loginBtn = document.querySelector('.loginBtn')
+const formData = document.querySelector('#signin')
+const username = formData.username.value;
+const password = formData.password.value;
+
+function loginAuth(username, password){
+    console.log(formData.username.value, formData.password.value);
+    fetch('http://localhost:3000/users',{
+    "method": "GET"
+})
+.then(response => response.json())
+.then(data =>{
+    data.forEach(user =>{
+        //console.log(`${user.username === formData.username.value} \n ${user.password === formData.password.value}`)
+        if(user.username === username && user.password === password){
+            // console.log(`Hello ${user.username}.  Welcome back`)
+            // user.loginStatus= true;
+            return true
+        }else{
+            // console.log(`Wrong username or password`)
+            return false
+        }
+    })
+    
+})
+.catch(err => console.log(err))
+
+}
+
+loginBtn.addEventListener('click', ()=>{
+    console.log(loginAuth(username, password))
+})
