@@ -1,5 +1,6 @@
 const watchButtons = document.getElementsByClassName('movie-list-item-button');
-const details = document.querySelector('.details')
+
+
 console.log(watchButtons)
     
 function  redirect(){
@@ -7,28 +8,30 @@ function  redirect(){
 
     document.querySelectorAll('.movie-list-item-button').forEach(button => {
         button.addEventListener('click', () => {
-            location.replace("./movie.html")
-            //const fired_button = button.value;
-            let baseUrl = "http://localhost:3000/";
-            let url = baseUrl.concat(button.value)
-            fetch(url, {  
-                 method: 'GET', 
-                 mode: 'cors', 
-                 cache: 'no-cache', 
-                 credentials: 'same-origin',
-                 headers: {
-                       'Content-Type': 'application/json'
-                 }
-    })
-            .then(response=> response.json())
-            .then(data=>{
-                //console.log(data)
-                details.innerHTML +=`
-                <h2>${data.title}</h1>
-                <p>${data.description}</p>
-                `
-            })
-            .catch(err =>{console.log(err)})
+            //const moviePage = window.open('./movie.html')
+           // const details = moviePage.document.getElementsByClassName('details')
+            console.log("hello world!!!");
+            //location.replace("./movie.html")
+    //         let baseUrl = "http://localhost:3000/";
+    //         let url = baseUrl.concat(button.value)
+    //         fetch(url, {  
+    //              method: 'GET', 
+    //              mode: 'cors', 
+    //              cache: 'no-cache', 
+    //              credentials: 'same-origin',
+    //              headers: {
+    //                    'Content-Type': 'application/json'
+    //              }
+    // })
+    //         .then(response=> response.json())
+    //         .then(data=>{
+    //             //console.log(data)
+    //             details.innerHTML +=`
+    //             <h2>${data.title}</h1>
+    //             <p>${data.description}</p>
+    //             `
+    //         })
+    //         .catch(err =>{console.log(err)})
             
             
         });
