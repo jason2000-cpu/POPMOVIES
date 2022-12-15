@@ -1,3 +1,4 @@
+import  '../movie.html'  as {movie_page}
 const watchButtons = document.getElementsByClassName('movie-list-item-button');
 
 
@@ -9,7 +10,12 @@ function  redirect(){
     document.querySelectorAll('.movie-list-item-button').forEach(button => {
         button.addEventListener('click', () => {
             //const moviePage = window.open('./movie.html')
-           // const details = moviePage.document.getElementsByClassName('details')
+           //const details = moviePage.document.getElementsByClassName('details')
+           fetch("../movie.html")
+           .then(response => response.text())
+           then(data =>{console.log(data)})
+           .catch(err =>{console.log(err)})
+           
             console.log("hello world!!!");
             //location.replace("./movie.html")
     //         let baseUrl = "http://localhost:3000/";
