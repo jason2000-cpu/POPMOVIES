@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.scss">
+    <link rel="stylesheet" href="/styles/style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
         rel="stylesheet">
@@ -13,7 +13,7 @@
     <title>POPMOVIES</title>
 </head>
 
-<body class="bdy">
+<body class="bdy" onload="redirect()">
     <div class="navbar">
         <div class="navbar-container">
             <div class="logo-container">
@@ -105,6 +105,7 @@
                 <h1 class="movie-list-title">SERIES</h1>
                 <div class="movie-list-wrapper">
                     <div class="series movie-list">
+                    
                         <!--series movies injected here-->
                     </div>
                     <i class="fas fa-chevron-right arrow"></i>
@@ -165,8 +166,9 @@
     GET NOTIFICATIONS | CONTACTS | REVIEWS
 </footer>
 
-   
-    <script src="./fetch.js"></script>
-    <script src="app.js"></script>
+  
+    <script src="/js/fetch.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="./js/movie.js"></script>
 </body>
 </html>
