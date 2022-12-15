@@ -117,47 +117,55 @@
 
 <!-----------login/logout modal------------>
 
-<div class="login-form">
-    <h1>LOGIN</h1>
-    <form id="signin" onsubmit="event.preventDefault();" >
+<div class="loginModal">
+    <div class="login-form">
+        <h1>LOGIN</h1>
+        <form id="signin" onsubmit="event.preventDefault();">
             <input type="text" id="username" placeholder="username" required>
-            <input type="password" id="password" placeholder="password" required> <i class="hide bi bi-eye-slash-fill"></i> 
-            <span style="display:inline"><input type="checkbox"> Remember me</span>
+            <input type="password" name="password" placeholder="password" required> <i class="hide bi bi-eye-slash-fill"></i>
+            <p>Forgot <span style="cursor: pointer; color:blue">Password?</span></p>
+
             <button class="loginBtn" value="SUBMIT">SUBMIT</button>
-    </form>
-    <p>Don't have an account? Create  <a>here</a> </p>
-    <div class="social-icons">
-            <i class="bi bi-instagram"></i> <i class="bi bi-linkedin"></i> 
+        </form>
+        <p>Don't have an account? Create <span onclick="signup()" style="cursor: pointer;color:blue">Here</span></p>
+        <div class="social-icons">
+            <i class="bi bi-instagram"></i> <i class="bi bi-linkedin"></i>
             <i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i>
+        </div>
+        </form>
     </div>
-</form>
+</div>
 
 <!--signup-->
-<div class="signup-form">
-    <h1>SIGNUP</h1>
-    <form  onsubmit="event.preventDefault();" id="signup">
-        <input type="text" name="username" placeholder="username" required>
-        <input type="email" name="email" placeholder="email" required>
-        <input type="number" name="phoneNo" id="phoneNo" placeholder="phone number">
-        <input type="password" name="password" id="password" placeholder="password">
-        <input type="password" name="pwd" placeholder="confirm password" required> <i class="hide bi bi-eye-slash-fill"></i>
-        <span><input type="checkbox" id="chckbox">Terms & Conditions</span>
-        <button id="submit-btn" value="SUBMIT">Register</button>
-    </form>
-    <p>Already have and account ? Login <a>here</a> </p>
-    <div class="social-icons">
-        <i class="bi bi-instagram"></i> <i class="bi bi-linkedin"></i>
-        <i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i>
+<div class="signupModal">
+    <div class="signup-form">
+        <h1>SIGNUP</h1>
+        <form onsubmit="event.preventDefault();" id="signup">
+            <input type="text" name="username" placeholder="username" required>
+            <input type="email" name="email" placeholder="email" required>
+            <input type="number" name="phoneNo" id="phoneNo" placeholder="phone number" required>
+            <input type="password" name="password" id="password" placeholder="password" required>
+            <input type="password" name="pwd" placeholder="confirm password" required> <i
+                class="hide bi bi-eye-slash-fill"></i>
+            <span><input style="margin:0rem 1rem 0rem 2rem;" type="checkbox" id="chckbox">Terms & Conditions</span>
+            <button id="submit-btn" value="SUBMIT">Register</button>
+        </form>
+        <p>Already have and account ? Login <span onclick="login()" style="cursor: pointer; color:blue">Here</span></p>
+        <div class="social-icons">
+            <i class="bi bi-instagram"></i> <i class="bi bi-linkedin"></i>
+            <i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i>
+        </div>
     </div>
 </div>
 
 <!-----------end of login/logout modal form------->
 
 
+<footer style="text-align: center ;">
+    GET NOTIFICATIONS | CONTACTS | REVIEWS
+</footer>
 
-    <footer style="text-align: center ;">
-        GET NOTIFICATIONS | CONTACTS | REVIEWS 
-    </footer>
+   
     <script src="./fetch.js"></script>
     <script src="app.js"></script>
 </body>

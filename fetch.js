@@ -96,35 +96,30 @@ fetch("http://localhost:3000/series",{
 
 
 //login/signup authentication
+
 const loginBtn = document.querySelector('.loginBtn')
 const formData = document.querySelector('#signin')
-const username = formData.username.value;
-const password = formData.password.value;
+const user = formData.username;
+const passwd = formData.password;
 
-function loginAuth(username, password){
-    console.log(formData.username.value, formData.password.value);
-    fetch('http://localhost:3000/users',{
-    "method": "GET"
-})
-.then(response => response.json())
-.then(data =>{
-    data.forEach(user =>{
-        //console.log(`${user.username === formData.username.value} \n ${user.password === formData.password.value}`)
-        if(user.username === username && user.password === password){
-            // console.log(`Hello ${user.username}.  Welcome back`)
-            // user.loginStatus= true;
-            return true
-        }else{
-            // console.log(`Wrong username or password`)
-            return false
-        }
-    })
-    
-})
-.catch(err => console.log(err))
 
-}
-
+//login authentication
 loginBtn.addEventListener('click', ()=>{
-    console.log(loginAuth(username, password))
+      fetch('http://localhost:3000/users',{
+        'method': 'GET', 
+    })
+    .then(response=> response.json())
+    .then(data=>{
+        for(i = 0; i < data.length; i++){
+            if(data[i].username === user.value && data[i].password === passwd.value){
+                data[i].loginStatus = true;
+                console.log(data[i].loginStatus)
+                alert(`Hello ${user.value} you are logged in!!`);
+                 return
+            }
+        }
+         alert("Wrong username or password")
+        
+    })
 })
+

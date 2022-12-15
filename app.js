@@ -39,36 +39,46 @@ ball.addEventListener("click", () => {
 //Login and Signup
 
 // Get the modal
-const  loginModal = document.querySelector('.login-form');
+const  loginModal = document.querySelector('.loginModal');
 const login_btn = document.querySelector('.login-form');
-const signupModal = document.querySelector('.signup-form')
-const body = document.querySelector('.container');
+const signupModal = document.querySelector('.signupModal')
+const body = document.querySelector('.bdy');
+
 
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if(event.target == modal) {
-    modal.style.display = "none";
+  if(event.target == signupModal || event.target == loginModal) {
+    signupModal.style.display = "none"
+    loginModal.style.display = "none";
+    body.style.overflow = "auto"
   }
 }
 
 function login(){
+  // if(loginModal.style.display !== "none"){
+  //   body.style.overflow = "hidden"
+  // }else{
+  //   body.style.overflow = "scroll";
+  // }
   if(loginModal.style.display === "none" ) {
-    body.style.background.color = 'grey'
-    signupModal.style.display = "none"
-    loginModal.style.display = "unset"
+    signupModal.style.display = "none";
+    loginModal.style.display = "unset";
+    body.style.overflow = "hidden"
+     
   }else{
-    body.style.background.color = 'none'
-    loginModal.style.display = "none"
+    body.style.background.color = 'none';
+    loginModal.style.display = "none";
+    body.style.overflow = "scroll";
   }
 }
 function signup(){
   if(signupModal.style.display == "none"){
-    body.style.filter = 'blur(4px)';
-    //body.style.background = 'yellow';
-    loginModal.style.display = "none"
-    signupModal.style.display = "unset"
+    loginModal.style.display = "none";
+    signupModal.style.display = "unset";
+     body.style.overflow = "hidden"
   }else{
-    signupModal.style.display = "none"
+    body.style.overflow = 'scroll';
+    signupModal.style.display = "none";
   }
 }
