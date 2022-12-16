@@ -13,38 +13,6 @@ fetch("http://localhost:3000/trending",{
 .then(data=>{
     data.forEach(movie => {
 
-
-        // const image = document.createElement('img');
-        // const span = document.createElement('span');
-        // const p = document.createElement('p');
-        // const btn = document.createElement('button')
-        // image.setAttribute('class', 'movie-list-item-img')
-        // image.setAttribute('src', `${movie.url}`);
-
-        // span.setAttribute('class', 'movie-list-item-title')
-        // const spaNode = document.createTextNode(`${movie.description}`)
-        // span.appendChild(spaNode)
-
-        // p.setAttribute('class', 'movie-list-item-desc');
-        // const pNode = document.createTextNode(`${movie.description}`);
-        // p.appendChild(pNode);
-
-        // btn.setAttribute('class', 'movie-list-item-button');
-        // btn.setAttribute('value', `series/${movie.id}`)
-        // const btnNode = document.createTextNode('Watch')
-        // btn.appendChild(btnNode)
-        
-        // const divEl = document.createElement('div');
-        // divEl.setAttribute('class', 'movie-list-item')
-        // divEl.appendChild(image)
-        // divEl.appendChild(span)
-        // divEl.appendChild(p)
-        // divEl.appendChild(btn)
-        // trending.appendChild(divEl)
-
-
-
-
         trending.innerHTML +=
          `
             <div class="movie-list-item">
@@ -70,40 +38,6 @@ fetch("http://localhost:3000/popular",{
 .then(data=>{
     data.forEach(movie => {
 
-
-        //         const image = document.createElement('img');
-        // const span = document.createElement('span');
-        // const p = document.createElement('p');
-        // const btn = document.createElement('button')
-        // image.setAttribute('class', 'movie-list-item-img')
-        // image.setAttribute('src', `${movie.url}`);
-
-        // span.setAttribute('class', 'movie-list-item-title')
-        // const spaNode = document.createTextNode(`${movie.description}`)
-        // span.appendChild(spaNode)
-
-        // p.setAttribute('class', 'movie-list-item-desc');
-        // const pNode = document.createTextNode(`${movie.description}`);
-        // p.appendChild(pNode);
-
-        // btn.setAttribute('class', 'movie-list-item-button');
-        // btn.setAttribute('value', `series/${movie.id}`)
-        // const btnNode = document.createTextNode('Watch')
-        // btn.appendChild(btnNode)
-        
-        // const divEl = document.createElement('div');
-        // divEl.setAttribute('class', 'movie-list-item')
-        // divEl.appendChild(image)
-        // divEl.appendChild(span)
-        // divEl.appendChild(p)
-        // divEl.appendChild(btn)
-        // popular.appendChild(divEl)
-
-
-
-
-
-
         popular.innerHTML +=
          `
             <div class="movie-list-item">
@@ -127,41 +61,6 @@ fetch("http://localhost:3000/new-release",{
 .then(data=>{
     data.forEach(movie => {
 
-
-        // const image = document.createElement('img');
-        // const span = document.createElement('span');
-        // const p = document.createElement('p');
-        // const btn = document.createElement('button')
-        // image.setAttribute('class', 'movie-list-item-img')
-        // image.setAttribute('src', `${movie.url}`);
-
-        // span.setAttribute('class', 'movie-list-item-title')
-        // const spaNode = document.createTextNode(`${movie.description}`)
-        // span.appendChild(spaNode)
-
-        // p.setAttribute('class', 'movie-list-item-desc');
-        // const pNode = document.createTextNode(`${movie.description}`);
-        // p.appendChild(pNode);
-
-        // btn.setAttribute('class', 'movie-list-item-button');
-        // btn.setAttribute('value', `series/${movie.id}`)
-        // const btnNode = document.createTextNode('Watch')
-        // btn.appendChild(btnNode)
-        
-        // const divEl = document.createElement('div');
-        // divEl.setAttribute('class', 'movie-list-item')
-        // divEl.appendChild(image)
-        // divEl.appendChild(span)
-        // divEl.appendChild(p)
-        // divEl.appendChild(btn)
-        // newRelease.appendChild(divEl)
-
-
-
-
-
-
-
         newRelease.innerHTML +=
          `
             <div class="movie-list-item">
@@ -184,39 +83,7 @@ fetch("http://localhost:3000/series",{
 .then(response=> response.json())
 .then(data=>{
     data.forEach(movie => {
-
-
-        // const image = document.createElement('img');
-        // const span = document.createElement('span');
-        // const p = document.createElement('p');
-        // const btn = document.createElement('button')
-        // image.setAttribute('class', 'movie-list-item-img')
-        // image.setAttribute('src', `${movie.url}`);
-
-        // span.setAttribute('class', 'movie-list-item-title')
-        // const spaNode = document.createTextNode(`${movie.description}`)
-        // span.appendChild(spaNode)
-
-        // p.setAttribute('class', 'movie-list-item-desc');
-        // const pNode = document.createTextNode(`${movie.description}`);
-        // p.appendChild(pNode);
-
-        // btn.setAttribute('class', 'movie-list-item-button');
-        // btn.setAttribute('value', `series/${movie.id}`)
-        // const btnNode = document.createTextNode('Watch')
-        // btn.appendChild(btnNode)
         
-        // const divEl = document.createElement('div');
-        // divEl.setAttribute('class', 'movie-list-item')
-        // divEl.appendChild(image)
-        // divEl.appendChild(span)
-        // divEl.appendChild(p)
-        // divEl.appendChild(btn)
-        // series.appendChild(divEl)
-
-
-
-
         series.innerHTML +=
          `
             <div class="movie-list-item">
@@ -235,9 +102,9 @@ fetch("http://localhost:3000/series",{
 //login/signup authentication
 
 const loginBtn = document.querySelector('.loginBtn')
-const formData = document.querySelector('#signin')
-const user = formData.username;
-const passwd = formData.password;
+const loginFormData = document.querySelector('#signin')
+const user = loginFormData.username;
+const passwd = loginFormData.password;
 
 
 //login authentication
@@ -260,3 +127,32 @@ loginBtn.addEventListener('click', ()=>{
     })
 })
 
+
+//signup authentication
+
+const signupFormData = document.querySelector('#signup');
+const regBtn = document.querySelector('#register-btn');
+
+regBtn.addEventListener('click', ()=>{
+    let data =   {
+            "loginStatus": true,
+            "username": signupFormData.username.value,
+            "email": signupFormData.email.value,
+            "pnoneNo": signupFormData.phoneNo.value,
+            "password": signupFormData.password.value
+        }
+        console.log(data)
+        fetch("http://localhost:3000/users", {
+            "method": "POST",
+            "headers":{
+                "content-type": "application/json",
+            },
+            "body": JSON.stringify(data)
+
+        })
+        .then(response => response.json())
+        .then(data =>{
+            console.log("Success", data)
+        })
+        .then(err => console.log(err))
+})

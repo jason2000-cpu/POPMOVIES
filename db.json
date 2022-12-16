@@ -1,211 +1,212 @@
 {
-    
-    "popular":[
-        {
-            "id":1,
-            "title":"Her",
-            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/1.jpeg"
-        },
-        {
-            "id":2,
-            "title":"Her",
-            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/2.jpeg"
-        },
-        {
-            "id":3,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-           "url":"./img/3.jpg"
-        },
-        {
-            "id":4,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-             "url":"./img/4.jpg"
-        },
-        {
-            "id":5,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/5.jpg"
-        },
-        {
-            "id":6,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/6.jpg"
-        },
-        {
-            "id":7,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/7.jpg"
-        }   
-        
-    ],
-    "trending":[
-         {
-            "id":1,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/8.jpg"
-        },
-        {
-            "id":2,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/9.jpg"
-        },
-        {
-            "id":3,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/10.jpg"
-        },
-        {
-            "id":4,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/11.jpg"
-        },
-        {
-            "id":5,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/12.jpg"
-        },
-        {
-            "id":6,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-           "url":"./img/1.jpeg"
-        },
-        {
-            "id":7,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-           "url":"./img/1.jpeg"
-        }        
-    ],
-    "new-release":[
-         {
-            "id":1,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/1.jpeg"
-        },
-        {
-            "id":2,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/2.jpeg"
-        },
-        {
-            "id":3,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/15.jpg"
-        },
-        {
-            "id":4,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/3.jpg"
-        },
-        {
-            "id":5,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/4.jpg"
-        },
-        {
-            "id":6,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-           "url":"./img/5.jpg"
-        },
-        {
-            "id":7,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-           "url":"./img/1.jpeg"
-        }        
-    ],
-    "series":[
-         {
-            "id":1,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/17.jpg"
-        },
-        {
-            "id":2,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/18.jpg"
-        },
-        {
-            "id":3,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/19.jpg"
-        },
-        {
-            "id":4,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/7.jpg"
-        },
-        {
-            "id":5,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-            "url":"./img/1.jpeg"
-        },
-        {
-            "id":6,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-           "url":"./img/5.jpg"
-        },
-        {
-            "id":7,
-            "title":"Her",
-           "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
-           "url":"./img/3.jpg"
-        }        
-    ],
-
-    "users":[
-        {
-            "id":1,
-            "loginStatus": false,
-            "username":"jackson2000",
-            "email":"jackson2000@gmail.com",
-            "pnoneNo": 254797955092,
-            "password":"12345"
-
-        },
-        {
-            "id":1,
-            "loginStatus": false,
-            "username":"charles2000",
-            "email":"charles2000@gmail.com",
-            "pnoneNo": 254797955092,
-            "password":"12345"
-
-        },
-        {
-            "id":1,
-            "loginStatus": false,
-            "username":"james2000",
-            "email":"james2000@gmail.com",
-            "pnoneNo": 254797955092,
-            "password":"12345"
-
-        }
-    ]
-    
+  "popular": [
+    {
+      "id": 1,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/1.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/2.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/7.jpg"
+    }
+  ],
+  "trending": [
+    {
+      "id": 1,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/8.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/9.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/10.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/11.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/12.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/1.jpeg"
+    },
+    {
+      "id": 7,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/1.jpeg"
+    }
+  ],
+  "new-release": [
+    {
+      "id": 1,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/1.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/2.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/15.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/3.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/4.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/5.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/1.jpeg"
+    }
+  ],
+  "series": [
+    {
+      "id": 1,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/17.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/18.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/19.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/7.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/1.jpeg"
+    },
+    {
+      "id": 6,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/5.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Her",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.",
+      "url": "./img/3.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "loginStatus": false,
+      "username": "jackson2000",
+      "email": "jackson2000@gmail.com",
+      "pnoneNo": 254797955092,
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "loginStatus": false,
+      "username": "charles2000",
+      "email": "charles2000@gmail.com",
+      "pnoneNo": 254797955092,
+      "password": "12345"
+    },
+    {
+      "id": 3,
+      "loginStatus": false,
+      "username": "james2000",
+      "email": "james2000@gmail.com",
+      "pnoneNo": 254797955092,
+      "password": "12345"
+    },
+    {
+      "loginStatus": true,
+      "username": "jackson",
+      "email": "jacksonmuturi2000@gmail.com",
+      "pnoneNo": "1345686455683567",
+      "password": "12345",
+      "id": 4
+    }
+  ]
 }
