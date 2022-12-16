@@ -123,7 +123,7 @@
         <h1>LOGIN</h1>
         <form id="signin" onsubmit="event.preventDefault();">
             <input type="text" id="username" placeholder="username" required>
-            <input type="password" name="password" placeholder="password" required> <i class="hide bi bi-eye-slash-fill"></i>
+            <input type="password" class="pwd" name="login-pass" placeholder="password" required> <i class="hide1 bi bi-eye-slash-fill"></i>
             <p>Forgot <span style="cursor: pointer; color:blue">Password?</span></p>
 
             <button class="loginBtn" value="SUBMIT">SUBMIT</button>
@@ -145,9 +145,9 @@
             <input type="text" name="username" placeholder="username" required>
             <input type="email" name="email" placeholder="email" required>
             <input type="number" name="phoneNo" id="phoneNo" placeholder="phone number" required>
-            <input type="password" name="password" id="password" placeholder="password" required>
-            <input type="password" name="pwd" placeholder="confirm password" required> <i
-                class="hide bi bi-eye-slash-fill"></i>
+            <input type="password" class="pwd" name="signup-pass" id="password" placeholder="password" required>
+            <input type="password" name="pwd" placeholder="confirm password" required> 
+            <i class="hide2 bi bi-eye-slash-fill"></i>
             <span><input style="margin:0rem 1rem 0rem 2rem;" type="checkbox" id="chckbox">Terms & Conditions</span>
             <button id="submit-btn" value="SUBMIT">Register</button>
         </form>

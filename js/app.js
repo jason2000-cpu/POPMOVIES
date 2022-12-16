@@ -82,3 +82,17 @@ function signup(){
     signupModal.style.display = "none";
   }
 }
+
+//hide/show password functionality
+
+const hideEl = document.querySelectorAll('.bi');
+const passInput = document.querySelectorAll('.pwd')
+
+hideEl.forEach(element=>{
+  element.addEventListener('click', ()=>{
+    //passInput.type === "password"? passInput.type = 'text': passInput.type = 'password';
+    for(i = 0; i < passInput.length; i++){
+      passInput[i].type === "password"? passInput[i].type = 'text': passInput[i].type = 'password';
+    }
+  })
+})
