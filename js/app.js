@@ -41,9 +41,8 @@ ball.addEventListener("click", () => {
 // Get the modal
 const  loginModal = document.querySelector('.loginModal');
 const login_btn = document.querySelector('.login-form');
-const signupModal = document.querySelector('.signupModal')
+const signupModal = document.querySelector('.signupModal');
 const body = document.querySelector('.bdy');
-
 
 
 // When the user clicks anywhere outside of the modal, close it
@@ -51,47 +50,47 @@ window.onclick = function(event) {
   if(event.target == signupModal || event.target == loginModal) {
     signupModal.style.display = "none"
     loginModal.style.display = "none";
-    body.style.overflow = "auto"
+    body.style.overflow = "auto";
   }
 }
 
 function login(){
-  // if(loginModal.style.display !== "none"){
-  //   body.style.overflow = "hidden"
-  // }else{
-  //   body.style.overflow = "scroll";
-  // }
   if(loginModal.style.display === "none" ) {
     signupModal.style.display = "none";
     loginModal.style.display = "unset";
-    body.style.overflow = "hidden"
+    body.style.overflow = "hidden";
      
   }else{
     body.style.background.color = 'none';
     loginModal.style.display = "none";
     body.style.overflow = "scroll";
   }
-}
+ // console.log(loginModal)
+};
+
+
+
+
 function signup(){
   if(signupModal.style.display == "none"){
     loginModal.style.display = "none";
     signupModal.style.display = "unset";
-     body.style.overflow = "hidden"
+     body.style.overflow = "hidden";
   }else{
     body.style.overflow = 'scroll';
     signupModal.style.display = "none";
   }
-}
+};
 
 //hide/show password functionality
 
 const hideEl = document.querySelectorAll('.bi');
-const passInput = document.querySelectorAll('.pwd')
+const passInput = document.querySelectorAll('.pwd');
 
 hideEl.forEach(element=>{
   element.addEventListener('click', ()=>{
     for(i = 0; i < passInput.length; i++){
       passInput[i].type === "password"? passInput[i].type = 'text': passInput[i].type = 'password';
-    }
-  })
-})
+    };
+  });
+});

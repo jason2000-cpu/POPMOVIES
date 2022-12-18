@@ -207,6 +207,22 @@
       "pnoneNo": "1345686455683567",
       "password": "12345",
       "id": 4
+    },
+    {
+      "loginStatus": true,
+      "username": "david",
+      "email": "david@example.com",
+      "pnoneNo": "4576978090",
+      "password": "1234556",
+      "id": 5
+    },
+    {
+      "loginStatus": true,
+      "username": "james",
+      "email": "jack@gmail.com",
+      "pnoneNo": "6123487126",
+      "password": "12345",
+      "id": 6
     }
   ]
 }
