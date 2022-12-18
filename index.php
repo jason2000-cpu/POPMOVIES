@@ -178,7 +178,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 <div class="loginModal">
     <div class="login-form">
         <h1>LOGIN</h1>
-        <form id="signin" onsubmit="event.preventDefault();">
+        <form id="signin"  action="actions.php" method="POST"> 
             <input type="text" id="username" placeholder="username" required>
             <input type="password" class="pwd" name="loginPass" placeholder="password" required> <i class="hide1 bi bi-eye-slash-fill"></i>
             <p>Forgot <span style="cursor: pointer; color:blue">Password?</span></p>
@@ -198,7 +198,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 <div class="signupModal">
     <div class="signup-form">
         <h1>SIGNUP</h1>
-        <form onsubmit="event.preventDefault();" id="signup">
+        <form  onsubmit="event.preventDefault();" id="signup">
             <input type="text" name="username" placeholder="username" required>
             <input type="email" name="email" placeholder="email" required>
             <input type="number" name="phoneNo" id="phoneNo" placeholder="phone number" required>
@@ -206,7 +206,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
             <input type="password" name="pwd" placeholder="confirm password" required> 
             <i class="hide2 bi bi-eye-slash-fill"></i>
             <span><input style="margin:0rem 1rem 0rem 2rem;" type="checkbox" id="chckbox">Terms & Conditions</span>
-            <button id="register-btn" value="SUBMIT">Register</button>
+            <button id="register_btn" type="submit" value="SUBMIT">Register</button>
         </form>
         <p>Already have and account ? Login <span onclick="login()" style="cursor: pointer; color:blue">Here</span></p>
         <div class="social-icons">
@@ -225,5 +225,39 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     <script src="/js/fetch.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
     <script  type="text/javascript" src="./js/movie.js"></script>
+
+<script>
+    let formData = document.getElementById('signup');
+    const httpRequest = new XMLHttpRequest();
+    formData.onsubmit = (event) =>{
+        event.preventDefault();
+        const formData = document.querySelector('#signup');
+        //console.log(formData.username.value, formData.pwd.value, formData.email.value, formData.phoneNo.value)
+        makeRequest('actions.php?a=save_viewer', formData);
+    }
+
+    function makeRequest(url, data) {
+        
+        httpRequest.onreadystatechange = alertContents;
+        httpRequest.open('POST', url);
+        httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        httpRequest.send(`form_data=${encodeURIComponent(data)}`);
+    }
+    function alertContents() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                //const response = JSON.parse(httpRequest.responseText);
+                alert(response.computedString);
+                alert"INFORMATION SCCESSFULLY UPDATED!!");
+            } else {
+                alert('There was a problem with the request.');
+            }
+        }
+    }
+  
+</script>
+
+
+
 </body>
 </html>
