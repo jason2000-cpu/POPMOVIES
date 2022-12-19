@@ -401,9 +401,10 @@ Class Actions extends DBConnection{
     }
 
     function save_viewer(){
-        $data = $_POST['form_data'] ?? 'no name';
-        $computedString = "Hi, " . $data.username . "!";
-        $array = ['userName' => $data.username, 'computedString' => $computedString];
+        $data = $_POST['userName']; //?? 'no name';
+        echo $data;
+        $computedString = "Hi, " . $data. "!";
+        $array = ['userName' => $data, 'computedString' => $computedString];
         echo json_encode($array);
     }
 }
@@ -449,6 +450,9 @@ switch($a){
     case 'update_application_status':
         echo $action->update_application_status();
     break;
+    case 'save_viewer':
+        echo $action->save_viewer();
+        break;
     default:
     // default action here
     break;

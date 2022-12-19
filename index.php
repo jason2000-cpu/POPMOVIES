@@ -198,7 +198,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 <div class="signupModal">
     <div class="signup-form">
         <h1>SIGNUP</h1>
-        <form  onsubmit="event.preventDefault();" id="signup">
+        <form  method="POST" onsubmit="event.preventDefault();" id="signup">
             <input type="text" name="username" placeholder="username" required>
             <input type="email" name="email" placeholder="email" required>
             <input type="number" name="phoneNo" id="phoneNo" placeholder="phone number" required>
@@ -227,34 +227,47 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     <script  type="text/javascript" src="./js/movie.js"></script>
 
 <script>
-    let formData = document.getElementById('signup');
-    const httpRequest = new XMLHttpRequest();
-    formData.onsubmit = (event) =>{
+    let form = document.getElementById('signup');
+   // const httpRequest = new XMLHttpRequest();
+    form.onsubmit = (event) =>{
         event.preventDefault();
-        const formData = document.querySelector('#signup');
-        //console.log(formData.username.value, formData.pwd.value, formData.email.value, formData.phoneNo.value)
-        makeRequest('actions.php?a=save_viewer', formData);
+        const form = document.querySelector('#signup');
+        // const dataObject = {
+        //     "username": form.username.value,
+        //     "email": form.email.value,
+        //     "phoneNo":form.phoneNo.value,
+        //     "password": form.pwd.value
+        // }
+        
+        // console.log(JSON.stringify(dataObject))
+        const userName = form.username.value 
+        makeRequest('actions.php?a=save_viewer', userName);
     }
 
-    function makeRequest(url, data) {
-        
+    function makeRequest(url, userName) {
+        httpRequest = new XMLHttpRequest();
+        if (!httpRequest) {
+            alert("Giving up :( Cannot create an XMLHTTP instance");
+            return false;
+        }
+
         httpRequest.onreadystatechange = alertContents;
         httpRequest.open('POST', url);
         httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        httpRequest.send(`form_data=${encodeURIComponent(data)}`);
+        httpRequest.send(`userName=${encodeURIComponent(userName)}`);
     }
     function alertContents() {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-            if (httpRequest.status === 200) {
-                const response = JSON.parse(httpRequest.responseText);
-                alert(response.computedString);
-                alert(httpRequest.readyState);
-            } else {
-                alert('There was a problem with the request.');
-            }
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        if (httpRequest.status === 200) {
+        const response = JSON.parse(httpRequest.responseText);
+        alert(response.computedString);
+        } else {
+        alert('There was a problem with the request.');
         }
     }
-  
+    }
+
+
 </script>
 
 
