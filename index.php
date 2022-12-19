@@ -246,9 +246,9 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     function alertContents() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
             if (httpRequest.status === 200) {
-                //const response = JSON.parse(httpRequest.responseText);
+                const response = JSON.parse(httpRequest.responseText);
                 alert(response.computedString);
-                alert"INFORMATION SCCESSFULLY UPDATED!!");
+                alert(httpRequest.readyState);
             } else {
                 alert('There was a problem with the request.');
             }
