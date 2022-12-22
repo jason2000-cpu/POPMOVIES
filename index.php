@@ -232,19 +232,19 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     form.onsubmit = (event) =>{
         event.preventDefault();
         const form = document.querySelector('#signup');
-        // const dataObject = {
-        //     "username": form.username.value,
-        //     "email": form.email.value,
-        //     "phoneNo":form.phoneNo.value,
-        //     "password": form.pwd.value
-        // }
+        const dataObject = {
+            "username": form.username.value,
+            "email": form.email.value,
+            "phoneNo":form.phoneNo.value,
+            "password": form.pwd.value
+        }
         
-        // console.log(JSON.stringify(dataObject))
-        const userName = form.username.value 
-        makeRequest('actions.php?a=save_viewer', userName);
+        //console.log(JSON.stringify(dataObject))
+        //const userName = form.username.value 
+        makeRequest('actions.php?a=save_viewer', JSON.stringify(dataObject));
     }
 
-    function makeRequest(url, userName) {
+    function makeRequest(url, formData) {
         httpRequest = new XMLHttpRequest();
         if (!httpRequest) {
             alert("Giving up :( Cannot create an XMLHTTP instance");
@@ -254,7 +254,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
         httpRequest.onreadystatechange = alertContents;
         httpRequest.open('POST', url);
         httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        httpRequest.send(`userName=${encodeURIComponent(userName)}`);
+        httpRequest.send(`formData=${encodeURIComponent(formData)}`);
     }
     function alertContents() {
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
@@ -269,8 +269,5 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 
 </script>
-
-
-
 </body>
 </html>

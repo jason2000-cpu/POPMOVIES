@@ -401,10 +401,31 @@ Class Actions extends DBConnection{
     }
 
     function save_viewer(){
-        $data = $_POST['userName']; //?? 'no name';
-        echo $data;
-        $computedString = "Hi, " . $data. "!";
-        $array = ['userName' => $data, 'computedString' => $computedString];
+        $json = $_POST['formData']; //?? 'no name';
+        $data = json_decode($json);
+        //echo $data->username;
+        // $insertion = $this->exec("INSERT INTO users (username, email, Phone_Number, passwd) VALUES('{$data->username}', '{$data->email}', '{$data->phoneNo}', '{$data->password}')");
+        // $insertion ? $computedString = "SUCESS!!!" : $computedString = $insertion;
+
+        $check = $this->query("SELECT count(id) as `count` FROM users where username = '${$data->username}'")->fetchArray()['count'];
+        //@$check= $this->exec("SELECT * from users  WHERE username = '{$data->username}'");
+       // $computedString = $check;
+        if($check > 0){
+           $computedString = $data->username . "Already exists";
+        }else{
+            $insertion = $this->exec("INSERT INTO users (username, email, Phone_Number, passwd) VALUES('{$data->username}', '{$data->email}', '{$data->phoneNo}', '{$data->password}')");
+            $computedString = "Hi, " . $data->username . "!";
+
+            // $check2 =  $this->query("SELECT count(application_id) as `count` FROM users  WHERE email = ${$data->email} AND phoneNo = '{$data->phoneNo}' AND password = '{$data->password}'")->fetchArray()['count'];
+            // if($check2 < 0){
+            //     $insertion = $this->exec("INSERT INTO users (username, email, Phone_Number, passwd) VALUES('{$data->username}', '{$data->email}', '{$data->phoneNo}', '{$data->password}')");
+            //     $computedString = "Hi, " . $data->username . "!";
+            // }else{
+            //     $computedString = "user Already exists";
+            // }
+
+        }
+        $array = ['userName' => $data->username, 'computedString' => $computedString];
         echo json_encode($array);
     }
 }
