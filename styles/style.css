@@ -93,6 +93,9 @@ body {
   transition: 1s ease all;
 }
 
+.profile-btns{
+  display:unset;
+}
 .sidebar {
   width: 50px;
   height: 100%;

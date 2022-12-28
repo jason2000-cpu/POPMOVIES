@@ -33,10 +33,10 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
                 </ul>
             </div>
-            <div style="visibility:hidden;" class="profile-container">
+            <div class="profile-container">
                 <img class="profile-picture" src="img/profile.jpg" alt="">
                 <div class="profile-text-container">
-                    <span class="profile-text">Profile</span>
+                    <span class="profile-text" id="profileName"></span>
                     <i class="fas fa-caret-down"></i>
                 </div>
                 <div class="toggle">
@@ -45,7 +45,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                     <div class="toggle-ball"></div>
                 </div>
             </div>
-            <div>
+            <div class="profile-btns" >
                 <button  id="btn_lgn" onclick="login()">Login</button>
                 <button onclick="signup()">Signup</button>
             </div>
@@ -178,19 +178,18 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 <div class="loginModal">
     <div class="login-form">
         <h1>LOGIN</h1>
-        <form id="signin"  action="actions.php" method="POST"> 
+        <form id="signin"  method="POST" onsubmit="event.preventDefault();"> 
             <input type="text" id="username" placeholder="username" required>
-            <input type="password" class="pwd" name="loginPass" placeholder="password" required> <i class="hide1 bi bi-eye-slash-fill"></i>
+            <input type="password"  id="password" class="pwd" name="loginPass" placeholder="password" required> <i class="hide1 bi bi-eye-slash-fill"></i>
             <p>Forgot <span style="cursor: pointer; color:blue">Password?</span></p>
 
-            <button class="loginBtn" value="SUBMIT">SUBMIT</button>
+            <button class="loginBtn"  type="submit" value="SUBMIT">SUBMIT</button>
         </form>
         <p>Don't have an account? Create <span onclick="signup()" style="cursor: pointer;color:blue">Here</span></p>
         <div class="social-icons">
             <i class="bi bi-instagram"></i> <i class="bi bi-linkedin"></i>
             <i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i>
         </div>
-        </form>
     </div>
 </div>
 
@@ -228,8 +227,26 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 <script>
     let form = document.getElementById('signup');
+    let loginForm = document.querySelector('#signin')
    // const httpRequest = new XMLHttpRequest();
+
+   //login Authentication
+   loginForm.onsubmit = (event) =>{
+    event.preventDefault();
+    form = document.querySelector('#signin')
+    const loginDataObject = {
+        "username": form.username.value,
+        "password": form.password.value,
+    }
+    console.log(loginDataObject);
+    makeRequest('actions.php?a=login_user', JSON.stringify(loginDataObject));
+
+   }
+
+
+   //signup Authentication
     form.onsubmit = (event) =>{
+        window.localStorage.clear();
         event.preventDefault();
         const form = document.querySelector('#signup');
         const dataObject = {
@@ -260,13 +277,25 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
         if (httpRequest.status === 200) {
         const response = JSON.parse(httpRequest.responseText);
+        //localStorage("login_status":response.login_status, "username":response.userName);
         alert(response.computedString);
+        window.localStorage.setItem("user_name", response.userName);
+        window.localStorage.setItem("login_status", response.login_status);
+        //alert(window.localStorage.user_name)
         } else {
         alert('There was a problem with the request.');
         }
     }
     }
 
+    // if(window.localStorage.user_name){
+    //     //alert(window.localStorage.user_name);
+    //     document.querySelector('.profile-container').style.display = 'unset';
+    //     document.querySelector('.profile-btns').style.display = 'none';
+    //     document.querySelector('#profileName').innerText = window.localStorage.user_name;
+    //     document.querySelector('.signupModal').style.display = 'none';
+    //     document.querySelector('.loginModal').style.display = 'none';
+    // }
 
 </script>
 </body>

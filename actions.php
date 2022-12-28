@@ -413,7 +413,7 @@ Class Actions extends DBConnection{
         if($check > 0){
            $computedString = $data->username . "Already exists";
         }else{
-            $insertion = $this->exec("INSERT INTO users (username, email, Phone_Number, passwd) VALUES('{$data->username}', '{$data->email}', '{$data->phoneNo}', '{$data->password}')");
+            $insertion = $this->exec("INSERT INTO users (username, email, Phone_Number, passwd,login_status) VALUES('{$data->username}', '{$data->email}', '{$data->phoneNo}', '{$data->password}', 1)");
             $computedString = "Hi, " . $data->username . "!";
 
             // $check2 =  $this->query("SELECT count(application_id) as `count` FROM users  WHERE email = ${$data->email} AND phoneNo = '{$data->phoneNo}' AND password = '{$data->password}'")->fetchArray()['count'];
@@ -426,6 +426,23 @@ Class Actions extends DBConnection{
 
         }
         $array = ['userName' => $data->username, 'computedString' => $computedString];
+        echo json_encode($array);
+    }
+    function login_user(){
+        $json = $_POST['formData']; 
+        $data = json_decode($json);
+        //$check = $this->query("SELECT count(id) as `count` FROM users where username = '${$data->username}'")->fetchArray()['count'];
+
+        $sql = "SELECT * FROM users where username = '{$data->username}' and `passwd` = '{$data->password}' ";
+        @$qry = $this->query($sql)->fetchArray();
+        
+        if(!$qry){
+            $computedString = "Wrong username or password!";
+        }else{
+            $updt = $this->query("UPDATE users SET login_status=1 WHERE username = '{$data->username}'");
+            $updt ? $computedString = "Hello " . $data->username . " welcome Back!" :  $computedString = "Login Error Occured";
+        }
+        $array = ['userName' => $data->username, 'computedString' => $computedString, "login_status" => 1];
         echo json_encode($array);
     }
 }
@@ -473,6 +490,9 @@ switch($a){
     break;
     case 'save_viewer':
         echo $action->save_viewer();
+        break;
+    case 'login_user':
+        echo $action->login_user();
         break;
     default:
     // default action here
