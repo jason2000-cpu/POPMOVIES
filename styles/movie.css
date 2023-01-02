@@ -61,11 +61,11 @@ body {
     margin: 0 20px;
 }
 
-.profile-picture, .comments_profile_picture{
-    width: 32px;
+.profile-picture{
     height: 32px;
     border-radius: 50%;
     object-fit: cover;
+    display: inline-block;
 }
 
 .toggle {
@@ -126,6 +126,24 @@ body {
     display:flex;
     align-items:center;
 } */
+.comments_section{
+    margin-top: 2rem;
+    padding:1rem;
+}
+.comment{
+    margin:1rem 0rem;
+}
+.comments_profile{
+    margin-bottom:.5rem;
+
+}
+.comments_profile .profile-text{
+   margin-top: 2rem;
+}
+.comments_profile .profile-picture{
+
+   
+}
  .other_movies{
     display: flex;
     margin: 2rem;

@@ -93,95 +93,23 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'watch';
                 </div>
 
                 <!---comments section--->
-                <div class="comments">
+                <div class="comments_section">
                     <?php
                       $comments = $conn->query("SELECT * FROM comments ");
                       while($row = $comments->fetchArray()):
                      ?>
-
-
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
+                    <div class="comment">
+                        <div class="comments_profile">
+                            <img class="profile-picture" src="img/profile.jpg" alt="">
+                            <span class="profile-text">Profile</span>
+                        </div>
+                        <p><?php echo $row['comment']?></p>
                     </div>
-                    <p><?php echo $row['comment']?></p>
+
+
 
                     <?php endwhile; ?>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
-                    <div class="comments_profile_picture">
-                        <img class="profile-picture" src="img/profile.jpg" alt="">
-                         <span class="profile-text">Profile</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+
                     
                 </div>
         </div>
