@@ -54,26 +54,11 @@
         window.localStorage.setItem("user_name", response.userName);
         window.localStorage.setItem("login_status", response.login_status);
         //alert(window.localStorage.user_name)
-        document.querySelector('.profile-container').style.display = 'unset';
-        document.querySelector('.profile-btns').style.display = 'none';
-        document.querySelector('#profileName').innerText = window.localStorage.user_name;
-        document.querySelector('.signupModal').style.display = 'none';
-        document.querySelector('.loginModal').style.display = 'none';
+   
         } else {
         alert('There was a problem with the request.');
         }
     }
     }
 
-    if(window.localStorage.user_name){
-        //alert(window.localStorage.user_name);
-        document.querySelector('.profile-container').style.display = 'unset';
-        document.querySelector('.profile-btns').style.display = 'none';
-        document.querySelector('.dropbtn').innerText = window.localStorage.user_name;
-        document.querySelector('.signupModal').style.display = 'none';
-        document.querySelector('.loginModal').style.display = 'none';
-    }else{
-       document.querySelector('.profile-container').style.display = 'none';
-
-    }
 

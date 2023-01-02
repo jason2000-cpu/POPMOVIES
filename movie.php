@@ -15,6 +15,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'watch';
 
      <!-- inherited styles from index.html -->
     <link rel="stylesheet" href="/styles/movie.css">
+    <!-- <link rel="stylesheet" href="/styles/style.css"> -->
     <link
          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
         rel="stylesheet">
@@ -72,7 +73,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'watch';
                     ?>
                     <div  class="screen">
                             <h1><?php echo $movie['title'] ?></h1>
-                            <video controls width="800" height="500">
+                            <video controls width="800" height="450">
                                     <!-- <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm"> -->
                                     <source src="/img/y2mate.com - WILLY PAUL AND NANDY NJIWA Official Video_1080p.mp4" type="video/webm">
 
@@ -88,93 +89,136 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'watch';
                                  <p><?php echo $movie['description'] ?></p>
                             </div>
                     </div>
-
-                </div>
-                <div class="comments_section">
-                    <h2>Comments</h1>
-                    <div class="profile">
-                        <img class="comments_profile_picture" src="img/profile.jpg" alt="">
-                        <span class="comments_profile_text">Profile</span>
-                        <div class="comment">
-                            <p>The movie is awesome I recomment @jackson to watch it and review it later</p>
-                        </div>
-
-                    </div>
-                    <div class="profile">
-                        <img class="comments_profile_picture" src="img/profile.jpg" alt="">
-                        <span class="comments_profile_text">Profile</span>
-                        <div class="comment">
-                            <p>The movie is awesome I recomment @jackson to watch it and review it later</p>
-                        </div>
-
-                    </div>
-                    <div class="profile">
-                        <img class="comments_profile_picture" src="img/profile.jpg" alt="">
-                        <span class="comments_profile_text">Profile</span>
-                        <div class="comment">
-                            <p>The movie is awesome I recomment @jackson to watch it and review it later</p>
-                        </div>
-
-                    </div>
-                    <div class="profile">
-                        <img class="comments_profile_picture" src="img/profile.jpg" alt="">
-                        <span class="comments_profile_text">Profile</span>
-                        <div class="comment">
-                            <p>The movie is awesome I recomment @jackson to watch it and review it later</p>
-                        </div>
-
-                    </div>
-                    <div class="profile">
-                        <img class="comments_profile_picture" src="img/profile.jpg" alt="">
-                        <span class="comments_profile_text">Profile</span>
-                        <div class="comment">
-                            <p>The movie is awesome I recomment @jackson to watch it and review it later</p>
-                        </div>
-
-                    </div>
-                    <div class="profile">
-                        <img class="comments_profile_picture" src="img/profile.jpg" alt="">
-                        <span class="comments_profile_text">Profile</span>
-                        <div class="comment">
-                            <p>The movie is awesome I recomment @jackson to watch it and review it later</p>
-                        </div>
-
-                    </div>
-                <form >
-                    <input  style="width:20rem; margin:1rem 0rem; outline:none; height:1.5rem; font-size:18px; border-radius:10px" type="text" name="comment" placeholder="write comment...">
-                    <button type="submit">POST</button>
-                </form>
+                   <!--like buttons should be here-->
                 </div>
 
+                <!---comments section--->
+                <div class="comments">
+                    <?php
+                      $comments = $conn->query("SELECT * FROM comments ");
+                      while($row = $comments->fetchArray()):
+                     ?>
+
+
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p><?php echo $row['comment']?></p>
+
+                    <?php endwhile; ?>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    <div class="comments_profile_picture">
+                        <img class="profile-picture" src="img/profile.jpg" alt="">
+                         <span class="profile-text">Profile</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ic fugit similique accusantium.</p>
+                    
+                </div>
         </div>
         
-                <div class="movie-list-wrapper">
-                    <div class="series movie-list">
-                    
-                        <!--series movies injected here-->
-
-                        <?php
-                        $movies = $conn->query("SELECT * FROM series_movies");
-                        while ($row = $movies->fetchArray()):
-                        ?>
- 
-                             <div class="movie-list-item">
-                                    <img class="movie-list-item-img" src=<?php echo $row['url'] ?> alt="">
-                                    <span class="movie-list-item-title"><?php echo $row['title'] ?></span>
-                                    <p class="movie-list-item-desc"><?php echo $row['description'] ?></p>
-                                    <button class="movie-list-item-button" value=series_movies/<?php echo $row['id'] ?>>Watch</button>
+        <!--other movies section-->
+        <div class="other_movies">
+            <?php
+              $other_movies = $conn->query("SELECT * FROM $cat");
+              while($row = $other_movies->fetchArray()):
+             ?>
+                    <div class="list">
+                            <img class="list-video" src=<?php echo $row['url'] ?> alt="">
+                            <div class="text">
+                                <h3 class="list-title"><?php echo $row['title'] ?></h3>
+   
+                                <p class="movie-list-item-desc"><?php echo substr($row['description'], 0, 50)."..." ?></p>
+                                <!-- <button class="movie-list-item-button" value=new_release_movies/<?php echo $row['id'] ?>>Watch</button> -->                                
                             </div>
-                        <?php endwhile ?>
- 
+
                     </div>
-                    <i class="fas fa-chevron-right arrow"></i>
-                </div>
+
+                    <!--TRIAL TRIAL-->
+                        <!-- <div class="list">
+                            <video src="images/vid-2.mp4" class="list-video"></video>
+                            <h3 class="list-title">zoombie walking animation</h3>
+                        </div> -->
+
+
+
+            <?php endwhile; ?>
+        
         </div>
     </div>
 
 
-
     <script src="js/movie.js"></script>
+    <script src="js/app.js"></script>
     <script>
         document.querySelector('.profile-text').innerText = window.localStorage.user_name
     </script>

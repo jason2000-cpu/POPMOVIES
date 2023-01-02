@@ -10,3 +10,20 @@ function redirect(){
         })
     })
 }
+
+
+ setInterval(()=>{
+       if(window.localStorage.user_name){
+        //alert(window.localStorage.user_name);
+        document.querySelector('.profile-container').style.visibility= 'visible'
+        document.querySelector('.profile-btns').style.display = 'none';
+        document.querySelector('.profile-text').innerText = window.localStorage.user_name;
+        document.querySelector('.signupModal').style.display = 'none';
+        document.querySelector('.loginModal').style.display = 'none';
+
+    }else{
+       document.querySelector('.profile-container').style.visibility='hidden';
+       document.querySelector('.profile-btns').style.display = 'unset';
+
+    }
+ },0)

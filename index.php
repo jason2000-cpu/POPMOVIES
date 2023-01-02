@@ -33,25 +33,18 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
                 </ul>
             </div>
-            <div class="profile-container">
-                <img class="profile-picture" src="img/profile.jpg" alt="">
-                <div class="profile-text-container">
-                    <span class="profile-text" id="profileName">
-                        <a href="javascript:void(0)" class="dropbtn"></a>
-                        <div class="dropdown-content">
-                            <a href="#">View profile</a>
-                            <a href="#">Watchlist</a>
-                            <a href="#">Settings</a>
-                        </div>
-                    </span>
-                    <i class="fas fa-caret-down"></i>
+                <div class="profile-container">
+                    <img class="profile-picture" src="img/profile.jpg" alt="">
+                    <div class="profile-text-container">
+                        <span class="profile-text">Profile</span>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                    <div class="toggle">
+                        <i class="fas fa-moon toggle-icon"></i>
+                        <i class="fas fa-sun toggle-icon"></i>
+                        <div class="toggle-ball"></div>
+                    </div>
                 </div>
-                <div class="toggle">
-                    <i class="fas fa-moon toggle-icon"></i>
-                    <i class="fas fa-sun toggle-icon"></i>
-                    <div class="toggle-ball"></div>
-                </div>
-            </div>
             <div class="profile-btns" >
                 <button  id="btn_lgn" onclick="login()">Login</button>
                 <button onclick="signup()">Signup</button>
@@ -232,5 +225,11 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     <script type="text/javascript" src="/js/app.js"></script>
     <script  type="text/javascript" src="./js/movie.js"></script>
     <script type="text/javascript" src="./js/app_api.js"></script>
+    <!-- <script>
+
+        setInterval(() => {
+            console.log("HELLO WORLD")
+        }, 500);
+    </script> -->
 </body>
 </html>
