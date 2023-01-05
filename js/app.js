@@ -108,3 +108,7 @@ hideEl.forEach(element=>{
     };
   });
 });
+
+if(window.localStorage.user_name){
+  document.querySelector('.profile-btns').style.display = 'none'
+}

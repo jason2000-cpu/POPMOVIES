@@ -49,8 +49,11 @@
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
         if (httpRequest.status === 200) {
         const response = JSON.parse(httpRequest.responseText);
+        document.querySelector('.signupModal').style.display = 'none';
+        document.querySelector('.loginModal').style.display = 'none'
         //localStorage("login_status":response.login_status, "username":response.userName);
         alert(response.computedString);
+
         window.localStorage.setItem("user_name", response.userName);
         window.localStorage.setItem("login_status", response.login_status);
         //alert(window.localStorage.user_name)
@@ -60,5 +63,4 @@
         }
     }
     }
-
 
