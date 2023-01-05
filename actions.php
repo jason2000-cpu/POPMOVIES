@@ -445,6 +445,24 @@ Class Actions extends DBConnection{
         $array = ['userName' => $data->username, 'computedString' => $computedString, "login_status" => 1];
         echo json_encode($array);
     }
+
+    //POST COMMENTS
+    function post_comment(){
+        $json = $_POST['formData'];
+        $data = json_decode($json);
+        //$computedString = $data->comment;
+        $post_comment = $this->exec("INSERT INTO comments (comment, movieId, username) VALUES('{$data->comment}', '{$data->movieId}', '{$data->user}')");
+        if($post_comment){
+            $computedString = $data->comment;
+            $status = "succcess";
+        }else{
+            $computedString = "comment could not be posted";
+            $status = "failed";
+        }
+
+        $array = [ 'status'=> $status, 'computedString' => $computedString, ];
+        echo json_encode($array);
+    }
 }
 $a = isset($_GET['a']) ?$_GET['a'] : '';
 $action = new Actions();
@@ -493,6 +511,9 @@ switch($a){
         break;
     case 'login_user':
         echo $action->login_user();
+        break;
+    case 'post_comment':
+        echo $action->post_comment();
         break;
     default:
     // default action here

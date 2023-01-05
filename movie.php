@@ -15,7 +15,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'watch';
 
      <!-- inherited styles from index.html -->
     <link rel="stylesheet" href="/styles/movie.css">
-    <!-- <link rel="stylesheet" href="/styles/style.css"> -->
+    <link rel="stylesheet" href="/styles/main.css">
     <link
          href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
         rel="stylesheet">
@@ -43,8 +43,15 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'watch';
                 <div class="profile-container">
                     <img class="profile-picture" src="img/profile.jpg" alt="">
                     <div class="profile-text-container">
-                        <span class="profile-text">Profile</span>
-                        <i class="fas fa-caret-down"></i>
+                        <div class="dropdown">
+                            <span class="profile-text">Profile</span>
+                             <i class="fas fa-caret-down drop_down"></i>
+                             <div class="dropdown_content">
+                                <span>Watchlist</span>
+                                <span>Settings</span>
+                                <span class="logout_btn">Logout</span>
+                             </div>
+                        </div>
                     </div>
                     <div class="toggle">
                         <i class="fas fa-moon toggle-icon"></i>
@@ -93,6 +100,15 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'watch';
                 </div>
 
                 <!---comments section--->
+                <div class="user_comment">
+                    <button class="comment_btn">Add Comment</button>
+                    <form style="visibility:hidden" class="comment_form" action="">
+                        <input type="text" name="comment" placeholder="comment here..." >
+                        <input  style="display:none" name="category" type="text" value=<?php echo "{$cat}"."/". "{$id}"?>>
+            
+                        <button type="submit">POST</button>
+                    </form>
+                </div>
                 <div class="comments_section">
                     <?php
                       $comments = $conn->query("SELECT * FROM comments ");
@@ -101,7 +117,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'watch';
                     <div class="comment">
                         <div class="comments_profile">
                             <img class="profile-picture" src="img/profile.jpg" alt="">
-                            <span class="profile-text">Profile</span>
+                            <span  class="profile-text"><?php echo $row['username']?></span>
                         </div>
                         <p><?php echo $row['comment']?></p>
                     </div>
@@ -147,8 +163,60 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'watch';
 
     <script src="js/movie.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/app_api.js"></script>
     <script>
+        const commentData = document.querySelector('.comment_form');
+        const comments_section = document.querySelector('.comments_section');
         document.querySelector('.profile-text').innerText = window.localStorage.user_name
+        document.querySelector('.comment_btn').addEventListener('click', ()=>{
+            document.querySelector('.comment_form').style.visibility = 'visible'
+
+        })
+
+        commentData.onsubmit = (event)=>{
+            event.preventDefault();
+            alert(commentData.comment.value)
+            const commentObject = {
+                "comment": commentData.comment.value,
+                "user":window.localStorage.user_name,
+                "movieId":commentData.category.value
+            }
+            console.log("The Object =>", commentObject)
+             makeRequest('actions.php?a=post_comment', JSON.stringify(commentObject));
+        }
+    function makeRequest(url, formData) {
+        httpRequest = new XMLHttpRequest();
+        if (!httpRequest) {
+            alert("Giving up :( Cannot create an XMLHTTP instance");
+            return false;
+        }
+
+        httpRequest.onreadystatechange = alertContents;
+        httpRequest.open('POST', url);
+        httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        httpRequest.send(`formData=${encodeURIComponent(formData)}`);
+    }
+    function alertContents() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        if (httpRequest.status === 200) {
+        const response = JSON.parse(httpRequest.responseText);
+
+        comments_section.innerHTML +=`
+                    <div class="comment">
+                        <div class="comments_profile">
+                            <img class="profile-picture" src="img/profile.jpg" alt="">
+                            <span  class="profile-text">${window.localStorage.user_name}</span>
+                        </div>
+                        <p>${response.computedString}</p>
+                    </div>
+        `
+        alert("from backend =>"+response.status);
+   
+        } else {
+        alert('There was a problem with the request.');
+        }
+    }
+    }
     </script>
 </body>
 </html>

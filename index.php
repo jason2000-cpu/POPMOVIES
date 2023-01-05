@@ -12,6 +12,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     <link rel="icon" href="<?php echo isset($_SESSION['system_info']['logo_path']) && is_file('.'.(explode('?',$_SESSION['system_info']['logo_path'])[0])) ? '.'.$_SESSION['system_info']['logo_path'] : "./images/no-image-available.png" ?>" />
 <html lang="en">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -36,8 +37,16 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                 <div class="profile-container">
                     <img class="profile-picture" src="img/profile.jpg" alt="">
                     <div class="profile-text-container">
-                        <span class="profile-text">Profile</span>
-                        <i class="fas fa-caret-down"></i>
+                        <!-- <span class="profile-text">Profile</span> -->
+                        <div class="dropdown">
+                            <span class="profile-text">Profile</span>
+                             <i class="fas fa-caret-down drop_down"></i>
+                             <div class="dropdown_content">
+                                <span>Watchlist</span>
+                                <span>Settings</span>
+                                <span class="logout_btn">Logout</span>
+                             </div>
+                        </div>
                     </div>
                     <div class="toggle">
                         <i class="fas fa-moon toggle-icon"></i>
@@ -194,7 +203,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 </div>
 
 <!--signup-->
-<div class="signupModal">
+<div class="signupModal" id="signup_modal">
     <div class="signup-form">
         <h1>SIGNUP</h1>
         <form  method="POST" onsubmit="event.preventDefault();" id="signup">
@@ -225,11 +234,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
     <script type="text/javascript" src="/js/app.js"></script>
     <script  type="text/javascript" src="./js/movie.js"></script>
     <script type="text/javascript" src="./js/app_api.js"></script>
-    <!-- <script>
-
-        setInterval(() => {
-            console.log("HELLO WORLD")
-        }, 500);
     </script> -->
 </body>
 </html>

@@ -1,137 +1,16 @@
-* {
-    margin: 0;
-}
-
-body {
-    font-family: "Roboto", sans-serif;
-}
-
-.navbar {
-    width: 100%;
-    height: 50px;
-    background-color: black;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-
-.navbar-container {
-    display: flex;
-    align-items: center;
-    padding: 0 50px;
-    height: 100%;
-    color: white;
-    font-family: "Sen", sans-serif;
-}
-
-.logo-container {
-    flex: 1;
-}
-
-.logo {
-    font-size: 30px;
-    color: #4dbf00;
-}
-
-.menu-container {
-    flex: 6;
-}
-
-.menu-list {
-    display: flex;
-    list-style: none;
-}
-
-.menu-list-item {
-    margin-right: 30px;
-}
-
-.menu-list-item.active {
-    font-weight: bold;
-}
-
-.profile-container {
-    flex: 2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.profile-text-container {
-    margin: 0 20px;
-}
-
-.profile-picture{
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: inline-block;
-}
-
-.toggle {
-    width: 40px;
-    height: 20px;
-    background-color: white;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: relative;
-}
-
-.toggle-icon {
-    color: goldenrod;
-}
-
-.toggle-ball {
-    width: 18px;
-    height: 18px;
-    background-color: black;
-    position: absolute;
-    right: 1px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 1s ease all;
-}
-
-.sidebar {
-    width: 50px;
-    height: 100%;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
-}
-
-.left-menu-icon {
-    color: white;
-    font-size: 20px;
-    margin-bottom: 40px;
-}
 .container{
-    /* margin-left:3.1rem; */
     margin:0px;
     padding-left: 4rem;
     display: flex;
-    /* align-items: center; */
     background-color: black
 
 }
-
-/* .watch_container{
-    flex: 2;
-    display:flex;
-    align-items:center;
-} */
 .comments_section{
-    margin-top: 2rem;
+    margin-top: .2rem;
     padding:1rem;
 }
 .comment{
-    margin:1rem 0rem;
+    margin:0rem 0rem;
 }
 .comments_profile{
     margin-bottom:.5rem;
@@ -139,10 +18,6 @@ body {
 }
 .comments_profile .profile-text{
    margin-top: 2rem;
-}
-.comments_profile .profile-picture{
-
-   
 }
  .other_movies{
     display: flex;
@@ -153,7 +28,6 @@ body {
     color:white;
     margin-top:0;
     position:relative;
-    /* margin-top: -20rem; */
 }
 
 .list {
@@ -173,4 +47,11 @@ body {
 }
 .list .text{
     display: inline;
+}
+
+.user_comment{
+    border:2px solid red;
+    margin-top:2rem;
+    display:flex;
+    flex-direction:row-reverse;
 }

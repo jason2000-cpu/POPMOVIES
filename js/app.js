@@ -35,6 +35,20 @@ ball.addEventListener("click", () => {
 });
 
 
+//profile dropdown
+document.querySelector('.drop_down').addEventListener('click', ()=>{
+  
+})
+
+//logout button
+
+document.querySelector('.logout_btn').addEventListener('click', ()=>{
+  window.localStorage.clear();
+  window.location.replace('/index.php')
+  alert("You have logged out")
+})
+
+
 
 //Login and Signup
 
